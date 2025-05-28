@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <title>CV Fahra Azzahra Lubis</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper/swiper-bundle.min.css"/>
+    <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+    <div class="swiper">
+        <div class="swiper-wrapper">
+            <div class="swiper-slide">
+                <img src="fahra.jpg" alt="Foto Fahra" class="profile" />
+                <h1>Fahra Azzahra Lubis</h1>
+                <p><strong>Tempat Tanggal Lahir:</strong> Medan, 07 April 2003</p>
+                <p><strong>Alamat:</strong> Jl. Manunggal Psr 6</p>
+                <p><strong>No. HP:</strong> 083834652552</p>
+                <div class="moto">
+                    "Being <b>grateful</b> or being <b>thanks</b> is one of the key happiness."
+                </div>
+            </div>
+
+            <div class="swiper-slide">
+                <h1>Tentang Aku</h1>
+                <div class="skills">
+                    Aku adalah seorang mahasiswi dengan ketertarikan tinggi di dunia desain, fotografi, dan content creation. Aku suka belajar hal baru dan menuangkannya dalam karya visual yang kreatif dan penuh warna.
+                </div>
+            </div>
+
+            <div class="swiper-slide">
+                <h1>Keahlian</h1>
+                <div class="skills">
+                    • Desain Grafis (Canva, Figma)<br>
+                    • Fotografi & Editing<br>
+                    • Video Konten<br>
+                    • Social Media Management<br>
+                </div>
+            </div>
+
+            <div class="swiper-slide">
+                <h1>Riwayat Pendidikan</h1>
+                <div class="skills">
+                    • SD MUHAMMADIYAH 11 Medan (2008 - 2014)<br>
+                    • SMP Negeri 16 Medan (2014 - 2017)<br>
+                    • SMK Negeri 8 Medan (2017 - 2020)<br>
+                    • Universitas Muhammadiyah Sumatera Utara,
+                    Prodi Sistem Informasi (2023 - Sekarang)
+                </div>
+            </div>
+
+            <div class="swiper-slide">
+                <div class="portfolio-container">
+                    <h1>Portofolio</h1>
+                    <div class="portfolio-gallery">
+                        <div class="portfolio-item">
+                            <img src="kisahcookies.jpg" alt="Kisah Cookies">
+                            <h3>Kisah Cookies</h3>
+                            <p>
+                                Project media sosial management untuk homebakery <strong>'Kisah Cookies'</strong>. Aku nggak cuma kelola kontennya, tapi juga bikin <strong>logo</strong> dan <strong>desain kemasan</strong>.
+                            </p>
+                        </div>
+                        <div class="portfolio-item">
+                            <img src="logo produk.jpg" alt="Logo Arave">
+                            <h3>Logo Arave</h3>
+                            <p>
+                                Logo yang aku buat untuk lomba <strong>P2MW</strong>. Desain simple dan elegan agar mudah dikenali.
+                            </p>
+                        </div>
+                        <div class="portfolio-item">
+                            <img src="lomba poster1.jpg" alt="Poster UI">
+                            <h3>Poster Universitas Indonesia</h3>
+                            <p>
+                                Lomba poster oleh <strong>Universitas Indonesia</strong> bertema isu sosial dengan warna berani dan desain modern.
+                            </p>
+                        </div>
+                        <div class="portfolio-item">
+                            <img src="lomba poster2.jpg" alt="Poster Satria Data">
+                            <h3>Poster SATRIA DATA</h3>
+                            <p>
+                                Lomba poster <strong>Kemendikbud Ristek</strong> tentang pentingnya literasi data untuk generasi muda.
+                            </p>
+                        </div>
+                    </div>
+                    <p style="margin-top: 30px;">
+                        Proyek lainnya bisa kamu lihat di Instagram-ku <a href="https://instagram.com/fhraazra" target="_blank">@fhraazra</a> 💖
+                    </p>
+                </div>
+            </div>
+
+            <div class="swiper-slide">
+                <h1>Kontak & Sosial Media</h1>
+                <div class="contact">
+                    ☎ WhatsApp: 083834652552<br>
+                    ✉ Email: fahraazzahralubis220@gmail.com<br>
+                    📷 Instagram: <a href="https://instagram.com/fhraazra" target="_blank">@fhraazra</a><br>
+                    🧑‍💼 LinkedIn: <a href="#" target="_blank">linkedin.com/in/fahraazzahralubis</a>
+                </div>
+            </div>
+        </div>
+
+        <div class="swiper-button-next"></div>
+        <div class="swiper-button-prev"></div>
+        <div class="swiper-pagination"></div>
+    </div>
+
+    <div id="lightbox" class="lightbox">
+      <span class="close-button">&times;</span>
+      <img class="lightbox-content" id="lightbox-img" src="">
+      <div id="lightbox-caption" class="caption-text"></div>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/swiper/swiper-bundle.min.js"></script>
+    <script>
+        const swiper = new Swiper('.swiper', {
+            direction: 'horizontal',
+            loop: false,
+            navigation: {
+                nextEl: '.swiper-button-next',
+                prevEl: '.swiper-button-prev',
+            },
+            pagination: {
+                el: '.swiper-pagination',
+                clickable: true,
+            },
+        });
+    </script>
+
+    <script>
+    
+      const lightbox = document.getElementById("lightbox");
+      const lightboxImg = document.getElementById("lightbox-img");
+      const lightboxCaption = document.getElementById("lightbox-caption");
+      const closeButton = document.querySelector(".close-button");
+
+    
+      const portfolioImages = document.querySelectorAll(".portfolio-item img");
+
+    
+      portfolioImages.forEach(img => {
+        img.addEventListener("click", function() {
+          lightbox.style.display = "block"; 
+          lightboxImg.src = this.src;
+          
+        
+          const projectTitle = this.nextElementSibling.innerText;
+          lightboxCaption.innerHTML = projectTitle;
+        });
+      });
+
+    
+      closeButton.addEventListener("click", function() {
+        lightbox.style.display = "none";
+      });
+
+    
+      lightbox.addEventListener("click", function(event) {
+        if (event.target == lightbox) {
+          lightbox.style.display = "none";
+        }
+      });
+    </script>
+</body>
+</html>
